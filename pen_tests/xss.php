@@ -2,7 +2,8 @@
 eval(base64_decode('ZnVuY3Rpb24gZWJkKCRhKXtlY2hvIGJhc2U2NF9kZWNvZGUoJGEpO30'));
 $this_path = $_SERVER['SCRIPT_NAME'];
 $string = "\" /><script>window.location = \"" . $this_path . "?cookie=\" + document.cookie;</script><br class=\"";
-setcookie('XSS_test', 'Vulnerable', time()+60, '/');
+// setcookie('XSS_test', 'Vulnerable', time()+60, '/'); commenting out b/c doesn't make sense
+// ??? why is it setting a cookie here... then cookie always set and reachable by JS...
 ?>
 
 <!doctype html>

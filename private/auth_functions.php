@@ -31,13 +31,15 @@
   // matches the user-agent string used when the user last logged in.
   function user_agent_matches_session() {
     // TODO add code to determine if user agent matches session
+    // return $_SESSION['user_id'] === $_REQUEST['user_id'];
+    error_log($_REQUEST['user_id']);
     return true;
   }
 
   // Inspects the session to see if it should be considered valid.
   function session_is_valid() {
     if(!last_login_is_recent()) { return false; }
-    // if(!user_agent_matches_session()) { return false; }
+    if(!user_agent_matches_session()) { return false; }
     return true;
   }
 

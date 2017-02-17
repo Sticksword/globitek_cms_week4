@@ -40,9 +40,9 @@ The following **required** functionality is completed:
   * [ ]  Required: If tokens do not match, show an error message.
   * [ ]  Required: Make sure that a logged-in user can use pages as expected.
 
-7\. [ ]  Required: Ensure the application is not vulnerable to XSS attacks.
+7\. [X]  Required: Ensure the application is not vulnerable to XSS attacks.
 
-8\. [ ]  Required: Ensure the application is not vulnerable to SQL Injection attacks.
+8\. [X]  Required: Ensure the application is not vulnerable to SQL Injection attacks.
 
 9\. [ ]  Required: Run all tests from Objective 1 again and confirm that your application is no longer vulnerable to any test.
 

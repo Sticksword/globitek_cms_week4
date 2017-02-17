@@ -13,6 +13,7 @@
   }
 
   function db_query($connection, $sql) {
+    $sql = db_escape($connection, $sql);
     $result_set = mysqli_query($connection, $sql);
     if(substr($sql, 0, 7) == 'SELECT ') {
       confirm_query($result_set);

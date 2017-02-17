@@ -4,17 +4,23 @@
 // attempting page redirects. Or else uncomment the line below.
 ob_start();
 
-$session_name = 'muh-sess'; // Set a custom session name
-$secure = false; // Set to true if using https else leave as false
-$httponly = true; // This stops javascript being able to access the session id
+// $session_name = 'muh-sess'; // Set a custom session name
+// $secure = false; // Set to true if using https else leave as false
+// $httponly = true; // This stops javascript being able to access the session id
+ini_set('session.cookie_httponly', 1);
 ini_set('session.use_only_cookies', 1); // Forces sessions to only use cookies to store session id's
 
-$cookieParams = session_get_cookie_params(); // Gets current cookies params.
-error_log($cookieParams['path']);
-session_set_cookie_params(86400, $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
-session_name($session_name); // Sets the session name to the one set above.
+// ini_set('session.cookie_secure', 1);
+ini_set('session.cookie_lifetime', 86400);
+
+// $cookieParams = session_get_cookie_params(); // Gets current cookies params.
+// error_log($cookieParams['path']);
+// session_set_cookie_params(86400, $cookieParams["path"], $cookieParams["domain"], $secure, $httponly);
+// session_name($session_name); // Sets the session name to the one set above.
 session_start(); // Start the php session
 // see also: http://security.stackexchange.com/questions/24177/starting-a-secure-php-session
+
+// $cookie->setHttpOnly(true);
 
 // misc session question: http://stackoverflow.com/questions/5593359/where-does-session-save
 
