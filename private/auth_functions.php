@@ -3,8 +3,9 @@
   // Will perform all actions necessary to log in the user
   // Also protects user from session fixation.
   function log_in_user($user) {
-    $_SESSION['user_id'] = $user['id'];
+    $_SESSION['user_id'] = encrypt($user['id']);
     $_SESSION['last_login'] = time();
+    $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
     session_regenerate_id(true);
     return true;
   }
@@ -16,7 +17,10 @@
 
   // Performs all actions necessary to log out a user
   function log_out_user() {
+    error_log(decrypt($_SESSION['user_id'])); // not sure what other sensitive info to store/decrypt
     unset($_SESSION['user_id']);
+    unset($_SESSION['last_login']);
+    unset($_SESSION['user_agent']);
     destroy_current_session();
     return true;
   }
@@ -30,10 +34,7 @@
   // Checks to see if the user-agent string of the current request
   // matches the user-agent string used when the user last logged in.
   function user_agent_matches_session() {
-    // TODO add code to determine if user agent matches session
-    // return $_SESSION['user_id'] === $_REQUEST['user_id'];
-    error_log($_REQUEST['user_id']);
-    return true;
+    return ($_SERVER['HTTP_USER_AGENT'] === $_SESSION['user_agent']);
   }
 
   // Inspects the session to see if it should be considered valid.

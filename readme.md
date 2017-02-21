@@ -1,7 +1,7 @@
 
 # Project 4 - Globitek Authentication and Login Throttling
 
-Time spent: 7 hours spent in total
+Time spent: 10 hours spent in total
 
 ## User Stories
 
@@ -28,23 +28,23 @@ The following **required** functionality is completed:
 5\. [X]  Required: Complete Logout page.
   * [X]  Required: Add code to destroy the user's session file after logging out.
 
-6\. [ ]  Required: Add CSRF protections to the state forms.
-  * [ ]  Required: Create a CSRF token.
-  * [ ]  Required: Add CSRF tokens to forms.
-  * [ ]  Required: Compare tokens against the stored version of the token.
-  * [ ]  Required: Only process forms data sent by POST requests.
-  * [ ]  Required: Confirm request referer is from the same domain as the host.
-  * [ ]  Required: Store the CSRF token in the user's session.
-  * [ ]  Required: Add the same CSRF token to the login form as a hidden input.
-  * [ ]  Required: When submitted, confirm that session and form tokens match.
-  * [ ]  Required: If tokens do not match, show an error message.
-  * [ ]  Required: Make sure that a logged-in user can use pages as expected.
+6\. [X]  Required: Add CSRF protections to the state forms.
+  * [X]  Required: Create a CSRF token.
+  * [X]  Required: Add CSRF tokens to forms.
+  * [X]  Required: Compare tokens against the stored version of the token.
+  * [X]  Required: Only process forms data sent by POST requests.
+  * [X]  Required: Confirm request referer is from the same domain as the host.
+  * [X]  Required: Store the CSRF token in the user's session.
+  * [X]  Required: Add the same CSRF token to the login form as a hidden input.
+  * [X]  Required: When submitted, confirm that session and form tokens match.
+  * [X]  Required: If tokens do not match, show an error message.
+  * [X]  Required: Make sure that a logged-in user can use pages as expected.
 
 7\. [X]  Required: Ensure the application is not vulnerable to XSS attacks.
 
 8\. [X]  Required: Ensure the application is not vulnerable to SQL Injection attacks.
 
-9\. [ ]  Required: Run all tests from Objective 1 again and confirm that your application is no longer vulnerable to any test.
+9\. [X]  Required: Run all tests from Objective 1 again and confirm that your application is no longer vulnerable to any test.
 
 
 The following advanced user stories are optional:
@@ -56,23 +56,23 @@ The following advanced user stories are optional:
   I think objective 4 breaks the 3rd fundamental principle which is `Simple is more secure.` Having to run `require_login()` on every page makes it very difficult to maintain and human engineers could often let one or two pages slip by without the check. If that occurs, it's only a matter of time before a l33t hacker accesses the page that slipped by. One solution could be to add some require login middleware on top of the url paths/endpoints so that you only have to add `require_login()` once in the code. This follows the DRY principle as well.
 
 
-* [ ] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
+* [X] Bonus Objective 2: Add CSRF protections to all forms in the staff directory
 
-* [ ]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
+* [X]  Bonus Objective 3: CSRF tokens only valid for 10 minutes.
 
-* [ ]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
+* [X]  Bonus Objective 4: Sessions are valid only if user-agent string matches previous value.
 
-* [ ]  Advanced Objective: Set/Get Signed-Encrypted Cookie
-  * [ ]  Create "public/set\_secret\_cookie.php".
-  * [ ]  Create "public/get\_secret\_cookie.php".
-  * [ ]  Encrypt and sign cookie before storing.
-  * [ ]  Verify cookie is signed correctly or show error message.
-  * [ ]  Decrypt cookie.
+* [X]  Advanced Objective: Set/Get Signed-Encrypted Cookie (not fully sure if implemented correctly, when it says encrypt cookie, it means encrypt the sesion data right? the task doesn't say specifically where to encrypt/decrypt)
+  * [X]  Create "public/set\_secret\_cookie.php".
+  * [X]  Create "public/get\_secret\_cookie.php".
+  * [X]  Encrypt and sign cookie before storing.
+  * [X]  Verify cookie is signed correctly or show error message.
+  * [X]  Decrypt cookie.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://imgur.com/a/75idH' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).

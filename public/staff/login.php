@@ -27,7 +27,6 @@ if(is_post_request()) {
 
   // If there were no errors, submit data to database
   if (empty($errors)) {
-
     $users_result = find_users_by_username($username);
     // No loop, only one result
     $user = db_fetch_assoc($users_result);
@@ -39,7 +38,7 @@ if(is_post_request()) {
       } else {
         $errors[] = "Password does not match username!";
       }
-    } else {
+    } else { // technically all errors should look same/similar to avoid giving away info
       $errors[] = "Username is not valid!";
     }
   }
